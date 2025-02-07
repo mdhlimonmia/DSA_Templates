@@ -83,10 +83,12 @@ bool bellmanFord(ll s, ll n, ll m){
             ll u = e[j].u;
             ll v = e[j].v;
             ll w = e[j].w;
-            if(dis[u]+w < dis[v]){
-                dis[v] = max(-infLL, dis[u]+w);
-                isCycle = 1;
-            }
+            // if(dis[u]<inf){
+                if(dis[u]+w < dis[v]){
+                    dis[v] = max(-infLL, dis[u]+w);
+                    isCycle = 1;
+                }
+            // }
         }
     }
     // find negative Cycle;
